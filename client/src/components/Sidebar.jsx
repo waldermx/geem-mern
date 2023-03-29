@@ -143,24 +143,28 @@ const Sidebar = ({
                         </FlexBetween>
                     </Box>
                     <List>
+                        {/* Hacemos un map que pasa por todos los NavItems */}
                         {navItems.map(({text, icon})=> {
-                            if (!icon){
+                            // Si no tiene ningún ícono, quiere decir que es un texto sin funcionalidad
+                            if (!icon){ 
                                 return (
                                     <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem"}}>
                                         {text}
                                     </Typography>
                                 )
                             }
+                            // Pone el texto del navitem en minúsculas
                             const lcText = text.toLowerCase();
 
+                            //Si tiene icono el navitem, se ejecuta lo siguiente
                             return(
-                                <ListItem key={text} disablePadding>
+                                <ListItem key={text} disablePadding> {/*Añadimos key y quitamos padding*/}
                                     <ListItemButton
-                                        onClick={() => {
+                                        onClick={() => { {/*Al hacer click, cambia el estado y la url*/}
                                             navigate(`/${lcText}`); 
                                             setActive(lcText)
                                         }}
-                                        sx={{
+                                        sx={{ //si state es igual a su nombre, entonces cambia su color
                                             bgcolor: active === lcText 
                                                 ? theme.palette.secondary[300] 
                                                 : "transparent",
@@ -170,10 +174,11 @@ const Sidebar = ({
                                                     : theme.palette.secondary[100]
                                         }}
                                     >
-                                        <ListItemIcon
-                                            sx={{
+                                        <ListItemIcon 
+                                            sx={{ //Cambia el margen izq a 2rem
                                                 ml: "2rem",
                                                 color: 
+                                                    //Si la pestaña está activa, cambia el color 
                                                     active === lcText 
                                                         ? theme.palette.primary[600] 
                                                         : theme.palette.secondary[200]
@@ -183,6 +188,7 @@ const Sidebar = ({
                                         </ListItemIcon>
                                         <ListItemText primary={text}/>
                                             {active === lcText && (
+                                                //Si la pestaña está activada, añade el ícono
                                                 <ChevronRightOutlined sx={{ml: "auto"}}/>
                                             )}
                                         
