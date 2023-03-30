@@ -36,51 +36,51 @@ import { bgcolor } from '@mui/system';
 
 const navItems = [
     {
-      text: "Dashboard",
+      text: "Panel",
       icon: <HomeOutlined />,
     },
     {
-      text: "Client Facing",
+      text: "Clientes",
       icon: null,
     },
     {
-      text: "Products",
+      text: "Productos",
       icon: <ShoppingCartOutlined />,
     },
     {
-      text: "Customers",
+      text: "Ver clientes",
       icon: <Groups2Outlined />,
     },
     {
-      text: "Transactions",
+      text: "Transacciones",
       icon: <ReceiptLongOutlined />,
     },
     {
-      text: "Geography",
+      text: "Geografía",
       icon: <PublicOutlined />,
     },
     {
-      text: "Sales",
+      text: "Ventas",
       icon: null,
     },
     {
-      text: "Overview",
+      text: "Panorama",
       icon: <PointOfSaleOutlined />,
     },
     {
-      text: "Daily",
+      text: "Diarias",
       icon: <TodayOutlined />,
     },
     {
-      text: "Monthly",
+      text: "Mensuales",
       icon: <CalendarMonthOutlined />,
     },
     {
-      text: "Breakdown",
+      text: "Desgloce",
       icon: <PieChartOutlined />,
     },
     {
-      text: "Management",
+      text: "Administración",
       icon: null,
     },
     {
@@ -88,7 +88,7 @@ const navItems = [
       icon: <AdminPanelSettingsOutlined />,
     },
     {
-      text: "Performance",
+      text: "Rendimiento",
       icon: <TrendingUpOutlined />,
     },
   ];
