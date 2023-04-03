@@ -12,6 +12,14 @@ import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js"
 
+//data imports
+// import User from "./models/user.js";
+// import {dataUser, dataProduct, dataProductStat} from "./data/index.js";
+
+// import Product from "./models/product.js";
+
+// import ProductStat from "./models/productStat.js";
+
 
 /* CONFIGURATION */
 dotenv.config();
@@ -22,6 +30,7 @@ app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}));
 app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}))
+app.use(cors());
 
 /*Routing*/
 app.use("/client", clientRoutes);
@@ -36,4 +45,8 @@ mongoose.connect(process.env.MONGO_URL,{
     useUnifiedTopology: true,
 }).then(()=>{
     app.listen(PORT, ()=> console.log(`Server Port: ${PORT}`))
+    //Solo agregar la siguiente línea de código la primera vez
+    // User.insertMany(datauser)    Crea tabla en base de datos
+    // Product.insertMany(dataProduct);
+    // ProductStat.insertMany(dataProductStat);
 }).catch((error)=>console.log(error, "did not connect"))

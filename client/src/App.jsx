@@ -22,7 +22,7 @@ function App() {
           <CssBaseline/>
           <Routes>
             <Route element={<Layout/>}>
-              <Route path="/" element={<Navigate to="/dashboard" replace />}/>
+              <Route path="/" element={<Navigate to="/panel" replace />}/>
               <Route path="/panel" element={<Dashboard/>}/>
               <Route path="/productos" element={<Products/>}/>
             </Route>
