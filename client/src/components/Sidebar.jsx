@@ -94,6 +94,7 @@ const navItems = [
   ];
 
 const Sidebar = ({
+    user,
     drawerWidth,
     isSidebarOpen,
     setIsSidebarOpen,
@@ -113,7 +114,7 @@ const Sidebar = ({
         {isSidebarOpen &&(
             <Drawer
             open={isSidebarOpen}
-            onclose={()=>setIsSidebarOpen(false)}
+            onClose={()=>setIsSidebarOpen(false)}
             variant="persistent"
             anchor="left"
             sx={{
@@ -197,6 +198,40 @@ const Sidebar = ({
                             )
                         })}
                     </List>
+                </Box>
+
+                <Box position="relative" bottom=".5rem" alignItems="center"
+                >
+                        <Divider />
+                        <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
+                            <Box
+                                component="img"
+                                alt="profile"
+                                src={profileImage}
+                                height="40px"
+                                width="40px"
+                                borderRadius="50%"
+                                sx={{objectFit: "cover"}}
+                            />
+                            <Box textAlign="left">
+                                <Typography 
+                                    fontWeight="bold" 
+                                    fontSize=".9rem" 
+                                    sx={{color: theme.palette.secondary[100]}}
+                                >
+                                    {user.name}
+                                </Typography>
+                                <Typography 
+                                    fontSize=".8rem" 
+                                    sx={{color: theme.palette.secondary[200]}}
+                                >
+                                    {user.occupation}
+                                </Typography>
+                            </Box>
+                            <SettingsOutlined
+                                sx={{color: theme.palette.secondary[300], fontSize: "25px"}}
+                            />
+                        </FlexBetween>
                 </Box>
 
             </Drawer>
